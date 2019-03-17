@@ -1,6 +1,7 @@
 extern crate num;
 extern crate image;
 extern crate crossbeam;
+extern crate num_cpus;
 
 use num::Complex;
 use std::str::FromStr;
@@ -141,7 +142,7 @@ fn main() {
     let mut pixels = vec![0; bounds.0 * bounds.1];
 
     // render(&mut pixels, bounds, upper_left, lower_right);
-    let threads = 8;
+    let threads = num_cpus::get();
     let rows_per_band = bounds.1 / threads + 1;
     {
         let bands: Vec<&mut [u8]> =
