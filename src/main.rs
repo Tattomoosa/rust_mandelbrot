@@ -9,21 +9,6 @@ use image::png::PNGEncoder;
 use std::fs::File;
 use std::io::Result;
 
-/*
-fn main() {
-    println!("Hello, world!");
-}
-
-#[allow(dead_code)]
-fn complex_square_add_loop(c: Complex<f64>) {
-    let mut z = Complex { re: 0.0, im: 0.0 };
-    loop {
-        z = z * z + c;
-    }
-}
-*/
-
-
 /// Parses x|y where x and y are strings that can be parsed by `T::from_str` and | is some
 /// char delimiter.
 fn parse_pair<T: FromStr>(s: &str, separator: char) -> Option<(T, T)> {
